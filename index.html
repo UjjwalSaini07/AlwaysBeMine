@@ -1,33 +1,137 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Will you be my Valentine?🥹❤️" />
-  <meta name="author" content="UjjwalS" />
-  <meta name="robots" content="index, follow" />
-  <meta name="og:title" content="Wanna Be my Valentine?❤️" />
-  <meta name="og:description" content="Will you be my Valentine?🥹❤️" />
-  <meta name="og:site_name" content="Always Be Mine❤️" />
-  <meta name="og:type" content="website" />
-  <title>Wanna be My Valentine?❤️</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "kwx3exx6k9");
-</script>
+<meta charset="UTF-8">
+<title>دعوة خطوبة</title>
+
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0b1a2b;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.door {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-image: url("https://i.imgur.com/8Km9tLL.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: 1.5s ease;
+}
+
+.left { left: 0; }
+.right { right: 0; }
+
+.open .left {
+  transform: translateX(-100%) rotateY(15deg);
+}
+.open .right {
+  transform: translateX(100%) rotateY(-15deg);
+}
+
+.glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,215,0,0.3), transparent);
+  opacity: 0;
+  transition: 2s;
+}
+
+.open .glow {
+  opacity: 1;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: gold;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: 2s;
+}
+
+.open .text {
+  opacity: 1;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+p {
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: gold;
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: none;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+</style>
 </head>
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+<body onclick="openDoor()">
 
+<div class="container">
+
+  <div class="door left"></div>
+  <div class="door right"></div>
+
+  <div class="glow"></div>
+
+  <div class="text">
+    <h1>محمود & مروة</h1>
+    <p>يتشرفان بدعوتكم لحضور حفل خطوبتهما 💍</p>
+    <p>📅 10 مايو 2026</p>
+    <p>📍 قاعة الفرح</p>
+
+    <a href="https://maps.app.goo.gl/SqxRXhojmjF8PwV38" target="_blank">
+      <button class="btn" id="locBtn" onclick="event.stopPropagation()">
+        📍 عرض اللوكيشن
+      </button>
+    </a>
+  </div>
+
+</div>
+
+<audio id="sound">
+  <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg">
+</audio>
+
+<script>
+function openDoor() {
+  document.body.classList.add("open");
+  document.getElementById("sound").play();
+
+  setTimeout(() => {
+    document.getElementById("locBtn").style.display = "inline-block";
+  }, 2000);
+}
+</script>
+
+</body>
 </html>
