@@ -32,7 +32,7 @@ Here’s a sneak peek of what you can expect from the template:
 ![image](https://github.com/user-attachments/assets/40beacf0-b509-47cd-be7e-a97f8e98156c)
 ![image](https://github.com/user-attachments/assets/ef5827e6-8c1f-4351-80ed-2f2d940416d4)
 
-## ❤️ Why You’ll Love It
+## ❤️ Why You’ll Lovee It
 - **Thoughtful and Personal**: Perfect for creating a heartfelt Valentine’s Day message or just a spontaneous declaration of love.
 - **User-Friendly**: Simple to use, no coding skills required.
 - **Creative**: Bring your ideas to life with interactive web elements.
